@@ -4,7 +4,7 @@ public class Fibonacci {
         if(n < 0) return -1;
         if(n <= 1) return n;
 
-        return 0;
+        return recursiveSolution(n -1) + recursiveSolution(n - 2);
     }
 
     public static int linearSolution(int n){
