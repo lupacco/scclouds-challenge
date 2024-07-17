@@ -1,15 +1,19 @@
 public class Main {
     public static void main(String[] args) {
 
-        int n = 30;
+        int n = 50;
 
         System.out.println("Solução Linear:");
-        int resultLinear = Fibonacci.linearSolution(n);
+        long resultLinear = Fibonacci.linearSolution(n);
         Fibonacci.printResult(n, resultLinear);
 
         System.out.println("Solução Recursiva:");
-        int resultRecursive = Fibonacci.recursiveSolution(n);
+        long start = System.currentTimeMillis();
+        long resultRecursive = Fibonacci.recursiveSolution(n);
         Fibonacci.printResult(n, resultRecursive);
+        long end = System.currentTimeMillis();
+
+        System.out.println("Tempo de execução: "+ (end - start));
     }
 }
 
