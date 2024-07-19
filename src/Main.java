@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
 
-        int n = 50;
+        int n = 15;
 
         System.out.println("Solução Linear:");
         long resultLinear = Fibonacci.linearSolution(n);
@@ -14,6 +14,13 @@ public class Main {
         long end = System.currentTimeMillis();
 
         System.out.println("Tempo de execução: "+ (end - start));
+
+
+        System.out.println("Solução linear primos:");
+        System.out.println(Prime.returnPrimesLinear(50));
+
+
+
     }
 }
 
