@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Prime {
 
-    public static boolean isPrime(int number){
+    public static boolean isPrimeLinear(int number){
         int divisors = 0;
 
         for(int i = 1; i <= number; i++){
@@ -17,7 +17,30 @@ public class Prime {
         List<Integer> result = new ArrayList<>();
 
         for(int i = 1; i <= n; i++){
-            if(isPrime(i)) result.add(i);
+            if(isPrimeLinear(i)) result.add(i);
+        }
+
+        return result;
+    }
+
+    public static boolean isPrimeRecursive(int number, int divider, int divisors){
+        if(number == 1) return true;
+
+        if(divisors > 2) return false;
+
+        if(number % divider == 0) divisors += 1;
+
+        if(divisors == 2 && number == divider) return true;
+
+        return isPrimeRecursive(number, divider + 1, divisors);
+
+    }
+
+    public static List<Integer> returnPrimesRecursive(int n){
+        List<Integer> result = new ArrayList<>();
+
+        for(int i = 1; i <= n; i++){
+            if(isPrimeRecursive(i, 1, 0)) result.add(i);
         }
 
         return result;

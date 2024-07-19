@@ -19,6 +19,9 @@ public class Main {
         System.out.println("Solução linear primos:");
         System.out.println(Prime.returnPrimesLinear(50));
 
+        System.out.println("Solução recursiva primos:");
+        System.out.println(Prime.returnPrimesRecursive(50));
+
 
 
     }
