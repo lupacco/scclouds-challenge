@@ -1,14 +1,14 @@
 public class Fibonacci {
 
     public static long recursiveSolution(int n){
-        if(n < 0) return -1;
+        validateInput(n);
         if(n <= 1) return n;
 
         return recursiveSolution(n -1) + recursiveSolution(n - 2);
     }
 
     public static long linearSolution(int n){
-        if(n < 0) return -1;
+        validateInput(n);
         if(n <= 1) return n;
 
         long last = 0;
@@ -27,5 +27,9 @@ public class Fibonacci {
     public static void printResult(int n, long result){
         if(result < 0) System.out.println("Valor inválido");
         else System.out.println("O "+n+"º elemento da sequencia de fibonacci é "+ result);
+    }
+
+    private static void validateInput(int n){
+        if(n < 0) throw new IllegalArgumentException("n deve ser maior ou igual a 0");
     }
 }

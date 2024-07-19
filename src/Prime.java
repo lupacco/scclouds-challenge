@@ -14,9 +14,10 @@ public class Prime {
     }
 
     public static List<Integer> returnPrimesLinear(int n){
+        validateInput(n);
         List<Integer> result = new ArrayList<>();
 
-        for(int i = 1; i <= n; i++){
+        for(int i = 2; i <= n; i++){
             if(isPrimeLinear(i)) result.add(i);
         }
 
@@ -24,8 +25,6 @@ public class Prime {
     }
 
     public static boolean isPrimeRecursive(int number, int divider, int divisors){
-        if(number == 1) return true;
-
         if(divisors > 2) return false;
 
         if(number % divider == 0) divisors += 1;
@@ -37,12 +36,17 @@ public class Prime {
     }
 
     public static List<Integer> returnPrimesRecursive(int n){
+        validateInput(n);
         List<Integer> result = new ArrayList<>();
 
-        for(int i = 1; i <= n; i++){
+        for(int i = 2; i <= n; i++){
             if(isPrimeRecursive(i, 1, 0)) result.add(i);
         }
 
         return result;
+    }
+
+    private static void validateInput(int n){
+        if(n <= 1) throw new IllegalArgumentException("n deve ser maior que 1");
     }
 }

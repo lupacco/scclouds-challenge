@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
 
-        int n = 15;
+        int n = 0;
 
         System.out.println("Solução Linear:");
         long resultLinear = Fibonacci.linearSolution(n);
@@ -16,11 +16,12 @@ public class Main {
         System.out.println("Tempo de execução: "+ (end - start));
 
 
+        n = 50;
         System.out.println("Solução linear primos:");
-        System.out.println(Prime.returnPrimesLinear(50));
+        System.out.println(Prime.returnPrimesLinear(n));
 
         System.out.println("Solução recursiva primos:");
-        System.out.println(Prime.returnPrimesRecursive(50));
+        System.out.println(Prime.returnPrimesRecursive(n));
 
 
 
